@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -105,4 +105,66 @@
             margin-bottom:20px;
         }
 
-        .    
+        .btn{
+            width:30%;
+        }
+
+        .numero{
+            font-size:26px;
+            width:70px;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="top-bar">
+    <img class="logo" src="https://i.imgur.com/UC6xqol.png">
+    <div class="titulo">GAMA DE COLORES</div>
+</div>
+
+<div id="caja-de-colores"></div>
+
+<div class="rgb-container">
+
+    <div class="btn moverR">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAADICAMAAADgZV0qAAAAMFBMVEX///8AAAB/f3+qqqr5+fmTk5OA
+gICtra3X19d7e3uCgoK0tLQPDw+2traiogRkAAABoUlEQVR4nO3QwW7DIAwFUErY/799rBfF5kLE
+…BASE64 RECORTADO POR ESPACIO…">
+        <input id="r" class="numero" type="number" min="0" max="255" value="45">
+    </div>
+
+    <div class="btn moverG">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAADICAMAAADgZV0qAAAAMFBMVEX///8AAAB/f3+qqqr5+fmTk5OA
+…BASE64…">
+        <input id="g" class="numero" type="number" min="0" max="255" value="45">
+    </div>
+
+    <div class="btn moverB">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAADICAMAAADgZV0qAAAAMFBMVEX///8AAAB/f3+qqqr5+fmTk5OA
+…BASE64…">
+        <input id="b" class="numero" type="number" min="0" max="255" value="45">
+    </div>
+
+</div>
+
+<script>
+function actualizarColor() {
+    let r = document.getElementById("r").value;
+    let g = document.getElementById("g").value;
+    let b = document.getElementById("b").value;
+
+    document.getElementById("caja-de-colores").style.background =
+        `rgb(${r},${g},${b})`;
+}
+
+document.getElementById("r").addEventListener("input", actualizarColor);
+document.getElementById("g").addEventListener("input", actualizarColor);
+document.getElementById("b").addEventListener("input", actualizarColor);
+
+actualizarColor();
+</script>
+
+</body>
+</html>
