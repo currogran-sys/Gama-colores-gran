@@ -1,5 +1,4 @@
-
-<!DOCTYPE html>
+      <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -9,14 +8,14 @@
     <style>
 
         body {
-            background:#111;       /* Fondo gris oscuro elegante */
+            background:#111;
             padding:10px;
             text-align:center;
             font-family:Arial;
             margin:0;
         }
 
-        /* BARRA SUPERIOR */
+        /* TOP BAR */
         .top-bar {
             width:90%;
             max-width:1100px;
@@ -31,7 +30,7 @@
             width:340px;
         }
 
-        .titulo {
+        .title {
             font-size:22px;
             font-weight:bold;
             letter-spacing:4px;
@@ -42,7 +41,7 @@
             right:10px;
         }
 
-        /* CAJA GRANDE CENTRAL */
+        /* COLOR BOX */
         #color-box {
             width:90%;
             max-width:1100px;
@@ -54,7 +53,7 @@
             margin-bottom:30px;
         }
 
-        /* CONTENEDOR RGB */
+        /* RGB BUTTONS */
         .rgb-container {
             display:flex;
             justify-content:center;
@@ -62,18 +61,16 @@
             margin-top:10px;
         }
 
-        /* BOTÓN INDIVIDUAL */
-        .boton {
+        .btn {
             width:200px;
             position:relative;
         }
 
-        .boton img {
+        .btn img {
             width:100%;
         }
 
-        /* NÚMERO */
-        .numero {
+        .num {
             position:absolute;
             top:50%;
             left:50%;
@@ -91,38 +88,34 @@
 
 <body>
 
-    <!-- BARRA SUPERIOR -->
     <div class="top-bar">
-        <img class="logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMQAAAAyCAYAAAB0yoySAAAA...TU_LOGO..." />
-        <div class="titulo">GAMA DE COLORES</div>
+        <img class="logo" src="https://currogran-sys.github.io/Gama-colores-gran/logo.png">
+        <div class="title">GAMA DE COLORES</div>
     </div>
 
-    <!-- CAJA DE COLOR -->
     <div id="color-box"></div>
 
-    <!-- BOTONES RGB -->
     <div class="rgb-container">
 
-        <div class="boton moverR">
-            <img src="data:image/png;base64,IVBORw0KGgoAAAA...IMAGEN_R..." />
-            <input id="r" class="numero" type="number" value="45" min="0" max="255">
+        <div class="btn">
+            <img src="https://currogran-sys.github.io/Gama-colores-gran/R.png">
+            <input id="r" class="num" type="number" value="45" min="0" max="255">
         </div>
 
-        <div class="boton moverG">
-            <img src="data:image/png;base64,IVBORw0KGgoAAAA...IMAGEN_G..." />
-            <input id="g" class="numero" type="number" value="45" min="0" max="255">
+        <div class="btn">
+            <img src="https://currogran-sys.github.io/Gama-colores-gran/G.png">
+            <input id="g" class="num" type="number" value="45" min="0" max="255">
         </div>
 
-        <div class="boton moverB">
-            <img src="data:image/png;base64,IVBORw0KGgoAAAA...IMAGEN_B..." />
-            <input id="b" class="numero" type="number" value="45" min="0" max="255">
+        <div class="btn">
+            <img src="https://currogran-sys.github.io/Gama-colores-gran/B.png">
+            <input id="b" class="num" type="number" value="45" min="0" max="255">
         </div>
 
     </div>
 
-    <!-- SCRIPT -->
     <script>
-        function actualizarColor() {
+        function updateColor() {
             let r = document.getElementById("r").value;
             let g = document.getElementById("g").value;
             let b = document.getElementById("b").value;
@@ -130,13 +123,12 @@
             document.getElementById("color-box").style.background = `rgb(${r}, ${g}, ${b})`;
         }
 
-        document.getElementById("r").addEventListener("input", actualizarColor);
-        document.getElementById("g").addEventListener("input", actualizarColor);
-        document.getElementById("b").addEventListener("input", actualizarColor);
+        document.getElementById("r").addEventListener("input", updateColor);
+        document.getElementById("g").addEventListener("input", updateColor);
+        document.getElementById("b").addEventListener("input", updateColor);
 
-        actualizarColor();
+        updateColor();
     </script>
 
 </body>
-</html>
-
+</html>     
